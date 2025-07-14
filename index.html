@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQsystem Mainframe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="os-container">
+        <header id="main-header">
+            <div id="logo">
+                <h1><span>IQ</span>system</h1>
+            </div>
+            <div id="system-info">
+                <span id="clock"></span>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <div id="left-column">
+                <div id="terminal">
+                    <div id="terminal-output"></div>
+                    <div id="terminal-input-line">
+                        <span class="prompt">CMD&gt;</span>
+                        <input type="text" id="terminal-input" autofocus>
+                    </div>
+                </div>
+                <div id="bottom-panels">
+                    <div id="file-viewer-panel" class="panel hidden">
+                        <h2>FILE VIEWER: <span id="viewing-filename"></span></h2>
+                        <pre id="file-viewer-content"></pre>
+                    </div>
+                    <div id="file-editor-panel" class="panel hidden">
+                        <h2>EDITING: <span id="editing-filename"></span> <span class="editor-info">(SAVE or CLOSE in terminal)</span></h2>
+                        <textarea id="file-editor-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div id="side-panel">
+                <div id="filesystem-panel" class="panel">
+                    <h2>LOCAL FILES</h2>
+                    <ul id="file-list"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

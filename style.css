@@ -1,0 +1,220 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #00bfff;
+    --secondary-color: #ffffff;
+    --danger-color: #ff0000;
+    --success-color: #00ff41;
+    --background-color: #00000a;
+    --panel-background-color: rgba(0, 25, 50, 0.85);
+    --border-color: #00bfff;
+    --glow-color: rgba(0, 191, 255, 0.4);
+    --font-family: 'Orbitron', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+#os-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 15px var(--glow-color) inset;
+}
+
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+#logo h1 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+}
+
+#logo span {
+    color: var(--danger-color);
+}
+
+#main-content {
+    flex-grow: 1;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    overflow: hidden;
+}
+
+#left-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+#terminal {
+    height: 60%;
+    background: var(--panel-background-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+#terminal-input-line {
+    display: flex;
+}
+
+.prompt {
+    margin-right: 0.5rem;
+}
+
+#terminal-input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-size: 1em;
+    outline: none;
+    text-transform: uppercase;
+}
+
+#side-panel {
+    width: 250px;
+}
+
+.panel {
+    background: var(--panel-background-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel.hidden {
+    display: none;
+}
+
+.panel h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    flex-shrink: 0;
+}
+
+#filesystem-panel {
+    height: 100%;
+}
+
+#file-list {
+    list-style: none;
+    overflow-y: auto;
+}
+
+#file-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0;
+    word-break: break-all;
+}
+
+#file-list li .file-name {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+#file-list li:hover .file-name {
+    color: var(--secondary-color);
+}
+
+#file-list .delete-btn {
+    color: var(--danger-color);
+    cursor: pointer;
+    margin-left: 1rem;
+    font-weight: bold;
+    display: none; /* Hidden by default */
+    padding: 0 0.3rem;
+}
+
+#file-list li:hover .delete-btn {
+    display: inline; /* Show on hover */
+}
+
+#file-list .delete-btn:hover {
+    text-shadow: 0 0 5px var(--danger-color);
+}
+
+#bottom-panels {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#file-viewer-panel, #file-editor-panel {
+    height: 100%;
+}
+
+#file-viewer-content, #file-editor-textarea {
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: var(--font-family);
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: var(--secondary-color);
+}
+
+#file-editor-textarea {
+    background: rgba(10, 10, 10, 0.9);
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+    resize: none;
+    text-transform: uppercase;
+}
+
+.editor-info {
+    font-size: 0.8em;
+    font-weight: normal;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.command-output, .success-output, .error-output {
+    color: var(--secondary-color);
+}
+.success-output { color: var(--success-color); }
+.error-output { color: var(--danger-color); }
